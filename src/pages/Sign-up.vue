@@ -12,7 +12,6 @@
             type="text"
             id="first-name"
           />
-          <p>{{ firstNameMessage }}</p>
         </div>
         <div class="info-content">
           <label class="info-content-name" for="last-name">Last name</label>
@@ -31,6 +30,7 @@
             v-model="form.email"
             class="info-content-value"
             placeholder="email@something.com"
+            type="email"
             id="email"
           />
         </div>
@@ -102,7 +102,6 @@ const handleSubmit = async () => {
     const data = await register(form);
     if (data.user) {
       showConfirmMessage.value = true;
-      console.log(data);
     } else {
       showErrorMessage.value = true;
     }
